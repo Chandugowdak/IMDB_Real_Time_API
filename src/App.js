@@ -51,11 +51,11 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container-fluid">
       <Nav />
       <Routes>
         {/* PASSING MULTIPLE COMPONENTS */}
-        <Route path='/Movie' element={<>
+        <Route exact path='/Movie' element={<>
           <Banner />
           <Movies watechlater={watechlater} handlingmovie={handlingmovie} MoviRemover={MoviRemover} />
         </>} />

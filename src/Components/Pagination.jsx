@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-const Pagination = ({MoveFront,MoveBack,pagenumber}) => {
+const Pagination = ({ MoveFront, MoveBack, pagenumber }) => {
   return (
     <div>
-      <div className='bg-secondary  d-flex justify-content-center  p-3 m-2'>
-        {/* PASSING MOVEBACK WORD FUNCTION TO GO BACK */}
-        <div ><i onClick={MoveBack}  className="fa-solid fa-arrow-left " title='Move Back Word' ></i></div>   
-        <div className='px-3 fw-bold'>{pagenumber}</div> 
-        {/* WE ARE USING PROPS FOR MOVING FRONT WHERE PROPS IS DEFINED IN MOVIE.JSX */}
-  <div> <i onClick={MoveFront} className="fa-solid fa-arrow-right " title='Move Forword'></i></div> 
+      <div className='bg-secondary d-flex justify-content-center p-3 m-2'>
+        <div>
+          <button onClick={MoveBack} className=" btn btn-info" title='Move Backward'>Move_back</button>
+        </div>
+        <div className='px-3 fw-bold'>{pagenumber}</div>
+        <div>
+          <button  onClick={MoveFront} className="btn btn-info" title='Move Forward'>Move_Front</button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

@@ -1,0 +1,102 @@
+/* Nav.css */
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  position: relative; /* Added for positioning the toggle button */
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  margin-right: 10px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Menu styling */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative; /* Change to relative for large screens */
+  top: 0;
+  left: 0;
+  background-color: white; /* Background color for dropdown */
+  border-radius: 5px; /* Rounded corners for dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  overflow: hidden;
+  z-index: 10; /* Ensure it appears above other content */
+}
+
+.nav-menu.open {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Link styling */
+.nav-link {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for color and background */
+}
+
+/* Link hover effect */
+.nav-link:hover {
+  color: white; /* Change text color on hover */
+  background-color: darkblue; /* Change background color on hover */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px; /* Add padding for small screens */
+    max-height: none; /* Remove max-height constraint */
+    box-shadow: none; /* Remove box-shadow for a cleaner look */
+    display: none; /* Hide menu by default on small screens */
+  }
+
+  .nav-menu.open {
+    display: flex; /* Show menu when open */
+  }
+
+  .nav-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex; /* Show menu by default on larger screens */
+    flex-direction: row;
+    position: relative; /* Reset positioning */
+    background-color: transparent; /* Remove background color for larger screens */
+    box-shadow: none; /* Remove shadow for larger screens */
+  }
+
+  .nav-toggle {
+    display: none; /* Hide toggle button on larger screens */
+  }
+}
